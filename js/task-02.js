@@ -10,13 +10,16 @@ const ingredients = [
 const ingredientsList = document.getElementById('ingredients')
 
 function makeArrayItemsListMarkup(array) {
+  let arrayItemsList = [];
   array.forEach(el => {
     const ingredientEl = document.createElement('li')
     ingredientEl.classList.add('item')
     ingredientEl.textContent = el
 
-    ingredientsList.append(ingredientEl);
+    arrayItemsList.push(ingredientEl)
   });
+
+  ingredientsList.append(...arrayItemsList);
 }
 
 makeArrayItemsListMarkup(ingredients)
