@@ -14,10 +14,9 @@ const deleteButtonRef = userInterfaceRef.children[2];
 createButtonRef.addEventListener('click', onAddElemets)
 deleteButtonRef.addEventListener('click', onDeletElements)
 
-
 function onAddElemets() {
+  boxesFieldRef.innerHTML = "";
   let elementsNumber = inputRef.value
-
   let elementValues = {
     width: 30,
     height: 30,
@@ -42,5 +41,6 @@ function onAddElemets() {
 
 function onDeletElements() {
   boxesFieldRef.innerHTML = "";
+  inputRef.value = 0
   console.log("Elements deleted")
 }
